@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Display</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-left: 10%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .passed {
+            color: green;
+        }
+        .error, .failed {
+            color: red;
+        }
+        .none {
+            color: grey;
+        }
+        /* Loader styles */
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 60px;
+            height: 60px;
+            animation: spin 2s linear infinite;
+            display: none; /* Hide loader by default */
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1>Test Cases </h1>
+        <h2>Summary</h2>
+    </div>
+
+    <table>
+        <tr style="text-align: center; font-weight: bold; color: white;"> 
+            <td style="background-color: green;">Passed: {{ totals.passed }}</td>
+            <td style="background-color: red;">Failed: {{ totals.failed }}</td>
+            <td style="background-color: red;">Error: {{ totals.error }}</td>
+            <td style="background-color: rgb(60, 54, 233);">None: {{ totals.none }}</td>
+        </tr>
+    </table>
+    <br>
+    <div style="text-align: center;">
+        <button type="button" class="btn btn-success" onclick="publishToJira()">Publish to jira ticket</button>
+        <div class="loader" id="loader"></div> <!-- Loader element -->
+    </div>
+    <br><br>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th> 
+                <th>Test Case Name</th>
+                <th>Test Case Verdict</th>
+                <th>Domain Expert of Requirement</th>
+                <th>Artifactory Upload Paths</th>
+                <th>Used TBC</th>
+                <th>Report-ID (ATX-ID)</th>
+                <th>HW Sample</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in table_data %}
+            <tr>
+                <td>{{ forloop.counter }}</td> 
+                <td>{{ row.Test_case_name }}</td>
+                <td style="text-align: center;" class="{% if row.Test_case_verdict == 'passed' %}passed{% elif row.Test_case_verdict == 'error' or row.Test_case_verdict == 'failed' %}error{% elif row.Test_case_verdict == 'none' %}none{% endif %}">
+                    {% if row.Test_case_verdict == 'passed' %}passed✅
+                    {% elif row.Test_case_verdict == 'error' or row.Test_case_verdict == 'failed' %}failed❌
+                    {% elif row.Test_case_verdict == 'none' %}none⏹
+                    {% endif %}
+                </td>
+                <td>{{ row.Domain_expert_of_requirement }}</td>
+                <td>{{ row.Artifactory_Upload_Paths }}</td>
+                <td>{{ row.Used_TBC }}</td>
+                <td>{{ row.Report_ID_ATX_ID }}</td>
+                <td>{{ row.HW_Sample }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        function publishToJira() {
+           
+            document.getElementById('loader').style.display = 'block';
+
+      
+            const data = {
+                issue_key: 'IP-9',
+                summary: 'Updated Test Case Results',
+                description: 'Updated test case results based on the latest data.'
+            };
+
+        
+            fetch('/update_jira_ticket22/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+            
+                document.getElementById('loader').style.display = 'none';
+                
+                // Handle the result
+                if (result.success) {
+                    alert('JIRA ticket updated successfully.');
+                } else {
+                    alert('Failed to update JIRA ticket.');
+                }
+            })
+            .catch(error => {
+            
+                document.getElementById('loader').style.display = 'none';
+                
+              
+                console.error('Error updating JIRA ticket:', error);
+                alert('Error updating JIRA ticket.');
+            });
+        }
+    </script>
+</body>
+</html>
