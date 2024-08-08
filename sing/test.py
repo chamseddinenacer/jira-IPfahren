@@ -1,7 +1,3 @@
-# modif just le ligne de table sans ajouter autre
-
-
-
 import pandas as pd
 from jira import JIRA
 import logging
