@@ -524,7 +524,10 @@ if __name__ == "__main__":
     df = read_excel_file(current_week_file_path)
 
     update_if_changed(issue_key, new_summary, new_description, table_data, df)
-
+ 
+    print("Hardware \n" ,create_hardware_table())
+    print("Software  \n",create_software_table(df))
+    print("Intake Result  \n",create_table(table_data))
   
     html_template = read_html_template('index.html')
     comparison_summary_html = generate_comparison_summary(final_df_sorted)
@@ -538,4 +541,4 @@ if __name__ == "__main__":
     generate_pdf_from_html(html_file_path, pdf_file_path)
 
     email_subject = "Weekly Test Case Comparison Results"
-    send_email(email_subject, EMAIL_HOST_USER, EMAIL_RECIPIENT, EMAIL_HOST_PASSWORD, pdf_file_path)
+    # send_email(email_subject, EMAIL_HOST_USER, EMAIL_RECIPIENT, EMAIL_HOST_PASSWORD, pdf_file_path)
