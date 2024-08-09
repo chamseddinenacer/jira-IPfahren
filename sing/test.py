@@ -41,6 +41,9 @@ logging.basicConfig(level=logging.INFO)
 
 # Excel file paths
 current_week_file_path = r'C:\Users\chamsa\Desktop\IPFahren\apk\test.xlsx'
+html_file_path = 'index.html'
+pdf_file_path = 'output.pdf'
+email_subject = "Weekly Test Case Comparison Results"
  
 
 def read_excel_file(path):
@@ -279,10 +282,20 @@ def get_final_results(hvm_list, daf_list, far_list):
 def get_existing_issue_data(issue_key):
     try:
         issue = jira.issue(issue_key)
-        return {
-            "summary": issue.fields.summary,
-            "description": issue.fields.description
-        }
+        status = issue.fields.status.name
+        invalid_statuses = {'Closed', 'Resolved', 'Done', 'Fixed', 'Completed', 'Terminé(e)'}
+        # Check if the issue is in one of the invalid statuses
+        if status in invalid_statuses:
+            print(f"Ticket {issue_key} is not valid. Status: {status}")
+            return False
+        else:
+            print(f"Ticket {issue_key} is valid. Status: {status}")
+            # return True
+        
+            return {
+                "summary": issue.fields.summary,
+                "description": issue.fields.description
+            }
     except Exception as e:
         logger.error(f"Error fetching Jira issue: {e}")
         raise
@@ -313,10 +326,13 @@ def compare_and_display_changes(existing_data, new_summary, new_description, tab
 
 def update_if_changed(issue_key, new_summary, new_description, table_data, sw_table):
     existing_data = get_existing_issue_data(issue_key)
-    changes = compare_and_display_changes(existing_data, new_summary, new_description, table_data, sw_table)
-    
-    if changes:
-        update_jira_ticket(issue_key, new_summary, new_description, table_data, sw_table)
+    if(existing_data):
+
+        changes = compare_and_display_changes(existing_data, new_summary, new_description, table_data, sw_table)
+        
+        if changes:
+            update_jira_ticket(issue_key, new_summary, new_description, table_data, sw_table)
+            generate_pdf_from_html(html_file_path, pdf_file_path)
 
 def update_jira_ticket(issue_key, new_summary, new_description, table_data, sw_table):
     if not issue_key:
@@ -388,7 +404,7 @@ def replace_placeholders_in_template(html_template, stats):
         'current_date': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     }
     
-    # Remplacer les placeholders dans le template
+    
     for key, value in placeholders.items():
         html_template = html_template.replace(f'{{{{ {key} }}}}', value)
     
@@ -467,6 +483,7 @@ config = pdfkit.configuration(wkhtmltopdf=r'C:\Program Files\wkhtmltopdf\bin\wkh
 def generate_pdf_from_html(html_file_path, pdf_file_path):
     pdfkit.from_file(html_file_path, pdf_file_path, configuration=config)
     print(f"PDF generated successfully: {pdf_file_path}")
+    # send_email(email_subject, EMAIL_HOST_USER, EMAIL_RECIPIENT, EMAIL_HOST_PASSWORD, pdf_file_path)
 
 
 def send_email(subject, from_email, to_email, password, pdf_file_path=None):
@@ -499,6 +516,9 @@ def send_email(subject, from_email, to_email, password, pdf_file_path=None):
         print(f"Failed to send email: {e}")
 
 
+
+
+
 if __name__ == "__main__":
     current_df = read_excel_file(current_week_file_path)
     required_columns = [
@@ -524,21 +544,32 @@ if __name__ == "__main__":
     df = read_excel_file(current_week_file_path)
 
     update_if_changed(issue_key, new_summary, new_description, table_data, df)
- 
+
+
+  
     print("Hardware \n" ,create_hardware_table())
     print("Software  \n",create_software_table(df))
     print("Intake Result  \n",create_table(table_data))
   
     html_template = read_html_template('index.html')
-    comparison_summary_html = generate_comparison_summary(final_df_sorted)
+    html_template_init = read_html_template('index_init.html')
+    
 
-    # Write the HTML summary to a file
-    with open('index.html', 'w', encoding='utf-8') as f:
-        f.write(comparison_summary_html)
+    with open('index.html', 'w', encoding='utf-8') as file:
+        file.write(html_template_init)
+        aa=True
+    
+    if(aa):
 
-    html_file_path = 'index.html'
-    pdf_file_path = 'output.pdf'
+        comparison_summary_html = generate_comparison_summary(final_df_sorted)
+        with open('index.html', 'w', encoding='utf-8') as file:
+            file.write(comparison_summary_html)
+ 
+
+
     generate_pdf_from_html(html_file_path, pdf_file_path)
 
-    email_subject = "Weekly Test Case Comparison Results"
+
+
     # send_email(email_subject, EMAIL_HOST_USER, EMAIL_RECIPIENT, EMAIL_HOST_PASSWORD, pdf_file_path)
+
