@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comparison Summary</title>
+    <title>Test Case Results Statistics</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -92,7 +92,7 @@
         <div class="title">
             <h1>Weekly Test Case Comparison Results</h1>
         
-            <p>Date: 2024-08-04 12:29:37</p>
+            <p>Date: 2024-08-15 09:45:44</p>
 
         </div>
     </div>
@@ -106,28 +106,32 @@
             <div class="col-md-6">
                 <br>
 
-                <h2>  Statistics Global </h2>
+                <h2>  Test Case Results Statistics </h2>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th>Statistique</th>
-                            <th>Nombre</th>
+                            <th>week 1 </th>
+                            <th>week 2 </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Tests Passés</td>
-                            <td>{{ passed_count }}</td>
+                            <td>Passed</td>
+                            <td>89</td>
+                            <td>92</td>
                         </tr>
                         <tr>
-                            <td>Tests Erreurs</td>
-                            <td>{{ error_count }}</td>
+                            <td>Error</td>
+                            <td>62</td>
+                            <td>59</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+            <br>
             <div class="col-md-6">
-                <h4>Statistiques Détailées</h4>
+                <h4><b>WEEK 1</b></h4>
                 <table class="summary-table">
                     <thead>
                         <tr>
@@ -139,35 +143,1447 @@
                     <tbody>
                         <tr>
                             <td>FAR</td>
-                            <td>{{ far_passed_count }}</td>
-                            <td>{{ far_error_count }}</td>
+                            <td>29</td>
+                            <td>16</td>
                         </tr>
                         <tr>
                             <td>HVM</td>
-                            <td>{{ hvm_passed_count }}</td>
-                            <td>{{ hvm_error_count }}</td>
+                            <td>22</td>
+                            <td>16</td>
                         </tr>
                         <tr>
                             <td>DAF</td>
-                            <td>{{ daf_passed_count }}</td>
-                            <td>{{ daf_error_count }}</td>
+                            <td>38</td>
+                            <td>30</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+
+
+            <br>
+
+            <div class="col-md-6">
+                <h4> <b>WEEK 2</b> </h4>
+                <table class="summary-table">
+                    <thead>
+                        <tr>
+                            <th>Controller</th>
+                            <th>Passed</th>
+                            <th>Failed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>FAR</td>
+                            <td>30</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>HVM</td>
+                            <td>23</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>DAF</td>
+                            <td>39</td>
+                            <td>29</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
         </div>
-        
-        <h4>Tableau de Comparaison</h4>
+        <br>
+        <h4> <b> Intake Result (WEEK 2): </b></h4>
         <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>TS</th>
                     <th>TCs</th>
-                    <th>Verdict</th>
+                    <th>Verdict <b> Week 1 </b></th>
+                    <th>Verdict <b> Week 2 </b> </th>
                 </tr>
             </thead>
             <tbody>
-                {{ table_rows }}
+                
+           
+            <tr>
+                <td><span class="highlight">Bsw_Communication</span></td>
+                <td><span class="highlight">IPF_Flexray2_Signal_Check</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C02: Not executed
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C01: Not executed
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Bsw_Communication</span></td>
+                <td><span class="highlight">IPF_Flexray_Signal_Check</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C02: Not executed
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C01: Not executed
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Bsw_Communication</span></td>
+                <td><span class="highlight">IPF_LIN_1_Signal_Check</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: passed✅,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C02: Not executed
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: passed✅,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C01: Not executed
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Bsw_Communication</span></td>
+                <td><span class="highlight">IPF_LIN_2_Signal_Check</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: passed✅,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C02: Not executed
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: passed✅,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C01: Not executed
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Communication</span></td>
+                <td><span class="highlight">IPF_autoip_default</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C02: error❌
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C01: error❌
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Communication</span></td>
+                <td><span class="highlight">IPF_dhcp_status</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C02: error❌
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C01: error❌
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Communication</span></td>
+                <td><span class="highlight">IPF_icmp_faulty_vlan</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C02: error❌
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C01: error❌
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Communication</span></td>
+                <td><span class="highlight">IPF_sd_client_active</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C02: error❌
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C01: error❌
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Communication</span></td>
+                <td><span class="highlight">IPF_sd_server_active</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C02: error❌
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C01: error❌
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Communication</span></td>
+                <td><span class="highlight">IPF_sd_session_handling</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C02: error❌
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C01: error❌
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Customer Functions Ea</span></td>
+                <td><span class="highlight">IPF_Driving_Pedal</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: failed❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C02: Not executed
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: failed❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C01: Not executed
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Customer Functions Ea</span></td>
+                <td><span class="highlight">IPF_Driving_Pedal_0V_5V_rampe</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C02: Not executed
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C01: Not executed
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Diagnostics</span></td>
+                <td><span class="highlight">IPF_EDIABAS_Status_Lesen</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C02: passed✅
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C01: passed✅
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Diagnostics</span></td>
+                <td><span class="highlight">IPF_EDIABAS_SVK_LESEN</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C02: passed✅
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C01: passed✅
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Diagnostics</span></td>
+                <td><span class="highlight">IPF_EDIABAS_FS_Lesen</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C02: passed✅
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C01: passed✅
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Diagnostics</span></td>
+                <td><span class="highlight">IPF_EDIABAS_FS_LESEN_Detail</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C02: passed✅
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C01: passed✅
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Diagnostics</span></td>
+                <td><span class="highlight">IPF_Diag_Status_Lesen</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C02: passed✅
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C01: passed✅
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Diagnostics</span></td>
+                <td><span class="highlight">IPF_Diag_SVK_Lesen</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C02: passed✅
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C01: passed✅
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Diagnostics</span></td>
+                <td><span class="highlight">IPF_Diag_FS_Lesen_Detail</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C02: passed✅
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C01: passed✅
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Diagnostics</span></td>
+                <td><span class="highlight">IPF_Diag_FS_Lesen</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C02: passed✅
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C01: passed✅
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Diagnostics</span></td>
+                <td><span class="highlight">IPF_DAF_Flexray_Check</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: Not executed,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C02: passed✅
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C01: passed✅
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Lifecycle</span></td>
+                <td><span class="highlight">IPF_hard_reset_no_nm</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C02: error❌
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C01: error❌
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Lifecycle</span></td>
+                <td><span class="highlight">IPF_deep_sleep</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C02: error❌
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C01: error❌
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Lifecycle</span></td>
+                <td><span class="highlight">IPF_parallel_programming_no_nm</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C02: error❌
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C01: error❌
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Lifecycle</span></td>
+                <td><span class="highlight">IPF_customer_arrival</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C02: error❌
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C01: error❌
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Lifecycle</span></td>
+                <td><span class="highlight">IPF_customer_leaves</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C02: error❌
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C01: error❌
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Measurement & Calibration</span></td>
+                <td><span class="highlight">IPF_ETH_DrivingReadiness</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C02: Not executed
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C01: Not executed
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Measurement & Calibration</span></td>
+                <td><span class="highlight">IPF_XCP_Check_HVM_Measurement</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: passed✅,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C02: Not executed
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: passed✅,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C01: Not executed
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Measurement & Calibration</span></td>
+                <td><span class="highlight">IPF_XCP_Check_HVM_Calibration</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: passed✅,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C02: Not executed
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: passed✅,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C01: Not executed
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Measurement & Calibration</span></td>
+                <td><span class="highlight">IPF_XCP_Check_FAR_Measurement</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C02: Not executed
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C01: Not executed
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Measurement & Calibration</span></td>
+                <td><span class="highlight">IPF_INCA_Stop</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C02: passed✅
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C01: passed✅
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Measurement & Calibration</span></td>
+                <td><span class="highlight">IPF_HVM_CP_PP</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: error❌,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C02: Not executed
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: error❌,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C01: Not executed
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Measurement & Calibration</span></td>
+                <td><span class="highlight">IPF_FAR_CCMs_Internal</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C02: Not executed
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C01: Not executed
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Measurement & Calibration</span></td>
+                <td><span class="highlight">IPF_DC_CAN_Signal_Check</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: passed✅,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C02: Not executed
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: passed✅,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C01: Not executed
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Measurement & Calibration</span></td>
+                <td><span class="highlight">IPF_AP_CAN_FD_check</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: Not executed,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C02: passed✅
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C01: passed✅
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Measurement & Calibration</span></td>
+                <td><span class="highlight">IPF_CAN_FD_IPF44_tx_Signal_Check</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C02: Not executed
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C01: Not executed
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Measurement & Calibration</span></td>
+                <td><span class="highlight">IPF_CAN_FD_IPF44_rx_Signal_Check</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C02: Not executed
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C01: Not executed
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Measurement & Calibration</span></td>
+                <td><span class="highlight">IPF_CAN_FD_IPF42_tx_Signal_Check</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C02: Not executed
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C01: Not executed
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Measurement & Calibration</span></td>
+                <td><span class="highlight">IPF_CAN_FD_IPF42_rx_Signal_Check</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C02: Not executed
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C01: Not executed
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Measurement & Calibration</span></td>
+                <td><span class="highlight">IPF_CAN_FD_IPF41_tx_Signal_Check</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C02: Not executed
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C01: Not executed
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Measurement & Calibration</span></td>
+                <td><span class="highlight">IPF_CAN_FD_IPF41_rx_Signal_Check</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: failed❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C02: Not executed
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: failed❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C01: Not executed
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Measurement & Calibration</span></td>
+                <td><span class="highlight">IPF_CAN_IPF31_tx_Signal_Check</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C02: Not executed
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    DAF C01: Not executed,<br><hr>
+                    DAF C01: Not executed
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Measurement & Calibration</span></td>
+                <td><span class="highlight">IPF_AE_CAN_FD_check</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: Not executed,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C02: passed✅
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C01: passed✅
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Measurement_And_Calibration</span></td>
+                <td><span class="highlight">IPF_XCP_Check_DAF_Measurement</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: Not executed,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C02: passed✅
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C01: passed✅
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Measurement_And_Calibration</span></td>
+                <td><span class="highlight">IPF_XCP_Check_DAF_Calibration</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: Not executed,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C02: passed✅
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C01: passed✅
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Programming</span></td>
+                <td><span class="highlight">IPF_Compare_SVK_Data_With_PDX</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: error❌,<br><hr>
+                    DAF C01: failed❌,<br><hr>
+                    DAF C02: failed❌
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: error❌,<br><hr>
+                    DAF C01: failed❌,<br><hr>
+                    DAF C01: failed❌
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Programming</span></td>
+                <td><span class="highlight">IPF_Hard_Reset</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C02: passed✅
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C01: passed✅
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Security</span></td>
+                <td><span class="highlight">IPF_ecu_mode_transition</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C02: error❌
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C01: passed✅
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Security</span></td>
+                <td><span class="highlight">IPF_ipsec_machine_state</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C02: error❌
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C01: error❌
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Security</span></td>
+                <td><span class="highlight">IPF_macsec_machine_state</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: Not executed,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C02: error❌
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C01: error❌
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">Security</span></td>
+                <td><span class="highlight">IPF_secoc_machine_state</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C02: error❌
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: error❌,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: error❌,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C01: error❌
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">T&V</span></td>
+                <td><span class="highlight">IPF_ECU_Ping</span></td>
+                <td>
+                    FAR C01: passed✅,<br><hr>
+                    FAR C02: passed✅,<br><hr>
+                    HVM C01: passed✅,<br><hr>
+                    HVM C02: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C02: passed✅
+                </td>
+               
+                <td>
+                    FAR C01: passed✅,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: passed✅,<br><hr>
+                    HVM C01: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C01: passed✅
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">T&V</span></td>
+                <td><span class="highlight">IPF_Ctr_Kl30_Off_On</span></td>
+                <td>
+                    FAR C01: passed✅,<br><hr>
+                    FAR C02: passed✅,<br><hr>
+                    HVM C01: passed✅,<br><hr>
+                    HVM C02: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C02: passed✅
+                </td>
+               
+                <td>
+                    FAR C01: passed✅,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: passed✅,<br><hr>
+                    HVM C01: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C01: passed✅
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">T&V</span></td>
+                <td><span class="highlight">IPF_Ctr_Kl30_Off_On_NM_Transmit</span></td>
+                <td>
+                    FAR C01: passed✅,<br><hr>
+                    FAR C02: passed✅,<br><hr>
+                    HVM C01: passed✅,<br><hr>
+                    HVM C02: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C02: passed✅
+                </td>
+               
+                <td>
+                    FAR C01: passed✅,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: passed✅,<br><hr>
+                    HVM C01: passed✅,<br><hr>
+                    DAF C01: error❌,<br><hr>
+                    DAF C01: passed✅
+                </td>
+
+
+            </tr>
+        
+           
+            <tr>
+                <td><span class="highlight">T&V</span></td>
+                <td><span class="highlight">IPF_Restart_Robustness</span></td>
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C02: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C02: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C02: passed✅
+                </td>
+               
+                <td>
+                    FAR C01: Not executed,<br><hr>
+                    FAR C01: passed✅,<br><hr>
+                    HVM C01: Not executed,<br><hr>
+                    HVM C01: passed✅,<br><hr>
+                    DAF C01: passed✅,<br><hr>
+                    DAF C01: passed✅
+                </td>
+
+
+            </tr>
+        
             </tbody>
         </table>
     </div>
